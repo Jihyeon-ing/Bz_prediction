@@ -75,7 +75,8 @@ for m in range(1, 13):
     # model.compile(loss='mse', optimizer=optimizers)
 
 #    from tensorflow.keras import callbacks
-#    callback = [callbacks.EarlyStopping(monitor="val_loss", patience=10, restore_best_weights=True)]
+#    early_stopping = callbacks.EarlyStopping(monitor="val_loss", patience=10, restore_best_weights=True)
+#    model_checkpoint = callbacks.ModelCheckpoint(f"./best_model_{test_month).h5", monitor='val_loss', save_best_only=True)
     hist = model.fit(x_train, y_train, validation_split=0.1, epochs=100, batch_size=1, verbose=1)
 
     # model save
